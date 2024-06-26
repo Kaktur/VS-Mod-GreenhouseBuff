@@ -50,7 +50,7 @@
   </ItemGroup>
 
 <ItemGroup>
-  <Content Include="res\modinfo.json">
+  <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
 </ItemGroup>
