@@ -1,0 +1,9 @@
+{
+  "type": "code",
+  "modid": "greenhousebuff",
+  "name": "GreenhouseBuff",
+  "authors": [ "Kaktur09" ],
+  "description": "Mod that increses the buff from greenhouses.",
+  "version": "1.0.0",
+  "dependencies": { "game": "made on: 1.19.8" }
+}

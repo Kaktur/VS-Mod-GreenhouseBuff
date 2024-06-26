@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenhouseBuff", "GreenhouseBuff\GreenhouseBuff\GreenhouseBuff.csproj", "{CF0668B7-C246-45C7-896C-8E9F0292F19E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "GreenhouseBuff\ZZCakeBuild\CakeBuild.csproj", "{F8954D57-08A4-4037-AE89-61AC84635D65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF0668B7-C246-45C7-896C-8E9F0292F19E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF0668B7-C246-45C7-896C-8E9F0292F19E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF0668B7-C246-45C7-896C-8E9F0292F19E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF0668B7-C246-45C7-896C-8E9F0292F19E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8954D57-08A4-4037-AE89-61AC84635D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8954D57-08A4-4037-AE89-61AC84635D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8954D57-08A4-4037-AE89-61AC84635D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8954D57-08A4-4037-AE89-61AC84635D65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C4B0027-2DCB-438D-BD23-A7EE5CAD4A78}
+	EndGlobalSection
+EndGlobal
