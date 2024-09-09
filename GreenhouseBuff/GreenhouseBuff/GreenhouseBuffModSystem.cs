@@ -32,6 +32,7 @@ namespace GreenhouseBuff
             {
                 harmony = new Harmony(Mod.Info.ModID);
                 harmony.PatchAll(); // Applies all harmony patches
+                api.Logger.Event("Greenhouse Buff - patches applied");
             }
         }
         public override void Dispose()
@@ -40,14 +41,14 @@ namespace GreenhouseBuff
         }
 
 
-        //TEST PACH
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(Entity), "ReceiveDamage")]
-        // Note that the name of the function does not matter
-        public static void test(Entity __instance, float damage)
-        { // For methods, use __instance to obtain the caller object
-            api.Logger.Event("{0} is about to take {1} damage!", __instance, damage);
-        }
+        ////TEST PACH
+        //[HarmonyPrefix]
+        //[HarmonyPatch(typeof(Entity), "ReceiveDamage")]
+        //// Note that the name of the function does not matter
+        //public static void test(Entity __instance, float damage)
+        //{ // For methods, use __instance to obtain the caller object
+        //    api.Logger.Event("{0} is about to take {1} damage!", __instance, damage);
+        //}
 
 
     }
