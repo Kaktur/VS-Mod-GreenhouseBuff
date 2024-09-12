@@ -11,8 +11,8 @@ namespace GreenhouseBuff
     [HarmonyPatch]
     internal class FruitTree : ModSystem
     {
-        public static float treeTempBonus = 20;
 
+        public static float treeTempBonus = GreenhouseBuff.Config.FruitTreeTempMod;
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FruitTreeRootBH), "getGreenhouseTempBonus")]

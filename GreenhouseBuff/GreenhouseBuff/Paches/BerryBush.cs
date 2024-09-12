@@ -12,7 +12,7 @@ namespace GreenhouseBuff
     [HarmonyPatch]
     internal class BerryBush : ModSystem
     {
-        public static float bushTempBonus = 20;
+        public static float bushTempBonus = GreenhouseBuff.Config.BerryBushTempMod;
 
         //WORKS ?
         //A B TEST with and wiwout mod on 80 - works

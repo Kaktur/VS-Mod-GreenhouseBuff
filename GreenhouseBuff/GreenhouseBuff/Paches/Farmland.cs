@@ -16,7 +16,8 @@ namespace GreenhouseBuff
     {
         //20 grows
         //15 dies
-        public static float farmlandTempBonus = 20;
+        
+        public static float farmlandTempBonus = GreenhouseBuff.Config.FarmlandTempMod;
 
         //WORKS
         //A B TEST with and wiwout mod - works
