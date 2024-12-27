@@ -1,7 +1,5 @@
-﻿
-//DOSENT DO ANYTHING
+﻿//DOESNT DO ANYTHING
 //suspecting bad implemetation in game sas nothing but the code mensiones bees in Greenhouse
-
 using HarmonyLib;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -9,13 +7,14 @@ using Vintagestory.GameContent;
 using System.Linq;
 using Vintagestory.API.Common;
 
-namespace GreenhouseBuff
+
+namespace GreenhouseBuff.ModPatches
 {
     [HarmonyPatch]
     internal class Beehive : ModSystem
     {
 
-        public static float beeTempBonus = GreenhouseBuff.Config.BeehiveTempMod;
+        public static float beeTempBonus = GreenhouseBuffConfig.Loaded.BeehiveTempMod;
 
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(BlockEntityBeehive), "TestHarvestable")]

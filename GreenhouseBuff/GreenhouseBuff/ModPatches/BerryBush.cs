@@ -7,12 +7,13 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.GameContent;
 
-namespace GreenhouseBuff
+
+namespace GreenhouseBuff.ModPatches
 {
     [HarmonyPatch]
     internal class BerryBush : ModSystem
     {
-        public static float bushTempBonus = GreenhouseBuff.Config.BerryBushTempMod;
+        public static float bushTempBonus = GreenhouseBuffConfig.Loaded.BerryBushTempMod;
 
         //WORKS ?
         //A B TEST with and wiwout mod on 80 - works

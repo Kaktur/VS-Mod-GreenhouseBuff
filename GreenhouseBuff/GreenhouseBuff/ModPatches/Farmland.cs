@@ -8,8 +8,7 @@ using Vintagestory.GameContent;
 using Vintagestory.API.Common;
 
 
-
-namespace GreenhouseBuff
+namespace GreenhouseBuff.ModPatches
 {
     [HarmonyPatch]
     internal class Farmland : ModSystem
@@ -17,7 +16,7 @@ namespace GreenhouseBuff
         //20 grows
         //15 dies
         
-        public static float farmlandTempBonus = GreenhouseBuff.Config.FarmlandTempMod;
+        public static float farmlandTempBonus = GreenhouseBuffConfig.Loaded.FarmlandTempMod;
 
         //WORKS
         //A B TEST with and wiwout mod - works

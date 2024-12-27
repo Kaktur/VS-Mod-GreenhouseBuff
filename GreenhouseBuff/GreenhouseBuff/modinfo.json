@@ -3,7 +3,7 @@
   "modid": "greenhousebuff",
   "name": "GreenhouseBuff",
   "authors": [ "Kaktur09" ],
-  "description": "Mod that increses the buff from greenhouses.",
-  "version": "1.1.0",
-  "dependencies": { "game": "1.19.8" }
+  "description": "Mod that increases the buff from greenhouses.",
+  "version": "1.2.0-a",
+  "dependencies": { "game": "*" }
 }
