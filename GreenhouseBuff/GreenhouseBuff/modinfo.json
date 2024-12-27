@@ -4,6 +4,6 @@
   "name": "GreenhouseBuff",
   "authors": [ "Kaktur09" ],
   "description": "Mod that increases the buff from greenhouses.",
-  "version": "1.2.0-a",
+  "version": "1.2.0",
   "dependencies": { "game": "*" }
 }
