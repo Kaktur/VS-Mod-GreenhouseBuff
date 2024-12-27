@@ -28,7 +28,7 @@ namespace GreenhouseBuff.ModPatches
                     (float)codes[i + 1].operand == 5f && codes[i + 2].opcode == OpCodes.Add)
                 {
                     // Replace it with temperature += bushTempBonus
-                    codes[i + 1].operand = GreenhouseBuffConfig.Loaded.BerryBushTempMod;  // Change the operand to the loaded config value
+                    codes[i + 1].operand = (float)GreenhouseBuffConfig.Loaded.BerryBushTempMod;  // Change the operand to the loaded config value
                 }
             }
 

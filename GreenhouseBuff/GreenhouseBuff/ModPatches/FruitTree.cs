@@ -19,7 +19,7 @@ namespace GreenhouseBuff.ModPatches
             // Check if the original return value is 5 and modify it to 10
             if (__result == 5)
             {
-                __result = GreenhouseBuffConfig.Loaded.FruitTreeTempMod;
+                __result = (float)GreenhouseBuffConfig.Loaded.FruitTreeTempMod;
             }
         }
     }
