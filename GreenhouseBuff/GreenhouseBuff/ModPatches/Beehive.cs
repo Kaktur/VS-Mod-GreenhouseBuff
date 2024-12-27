@@ -6,6 +6,7 @@ using System.Reflection.Emit;
 using Vintagestory.GameContent;
 using System.Linq;
 using Vintagestory.API.Common;
+using GreenhouseBuff.ModConfig;
 
 
 namespace GreenhouseBuff.ModPatches

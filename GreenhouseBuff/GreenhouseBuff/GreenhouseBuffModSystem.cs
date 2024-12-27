@@ -4,7 +4,7 @@ using Vintagestory.API.Server;
 using HarmonyLib;
 
 using GreenhouseBuff.ModNetwork;
-using Newtonsoft.Json;
+using GreenhouseBuff.ModConfig;
 
 // config stystem stolen from
 // https://github.com/Foxcapades/vsmod-thrifty-smithing/blob/6f2b6a9b03d2823ee616314f4cd40753572b2bcc/src/main/thrifty/ThriftySmithing.cs#L13
