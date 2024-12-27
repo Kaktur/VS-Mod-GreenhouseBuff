@@ -13,9 +13,6 @@ namespace GreenhouseBuff.ModPatches
     [HarmonyPatch]
     internal class Beehive : ModSystem
     {
-
-        public static float beeTempBonus = GreenhouseBuffConfig.Loaded.BeehiveTempMod;
-
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(BlockEntityBeehive), "TestHarvestable")]
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -29,7 +26,7 @@ namespace GreenhouseBuff.ModPatches
                     (float)codes[i + 1].operand == 5f && codes[i + 2].opcode == OpCodes.Add)
                 {
                     // Replace it with temp += beeTempBonus
-                    codes[i + 1].operand = beeTempBonus;  // Change the operand to the loaded config value
+                    codes[i + 1].operand = GreenhouseBuffConfig.Loaded.BeehiveTempMod;  // Change the operand to the loaded config value
                 }
             }
 

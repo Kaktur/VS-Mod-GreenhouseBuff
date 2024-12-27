@@ -4,6 +4,7 @@ using Vintagestory.API.Server;
 using HarmonyLib;
 
 using GreenhouseBuff.ModNetwork;
+using Newtonsoft.Json;
 
 // config stystem stolen from
 // https://github.com/Foxcapades/vsmod-thrifty-smithing/blob/6f2b6a9b03d2823ee616314f4cd40753572b2bcc/src/main/thrifty/ThriftySmithing.cs#L13
@@ -30,15 +31,18 @@ namespace GreenhouseBuff
                 GreenhouseBuffConfig cfgFromDisk;
                 if ((cfgFromDisk = api.LoadModConfig<GreenhouseBuffConfig>(cfgFileName)) == null)
                 {
+                    this.Mod.Logger.Notification("No config file found, defult one will be generated");
                     api.StoreModConfig(GreenhouseBuffConfig.Loaded, cfgFileName);
                 }
                 else
                 {
+                    this.Mod.Logger.Notification("Config json loaded");
                     GreenhouseBuffConfig.Loaded = cfgFromDisk;
                 }
             }
             catch
             {
+                this.Mod.Logger.Error("Failed to load config JSON, loaded default");
                 api.StoreModConfig(GreenhouseBuffConfig.Loaded, cfgFileName);
             }
 
@@ -48,6 +52,7 @@ namespace GreenhouseBuff
         public override void Start(ICoreAPI api)
         {
             this.api = api;
+            base.Start(api);
 
             // The mod is started once for the server and once for the client.
             // Prevent the patches from being applied by both in the same process.
@@ -55,7 +60,7 @@ namespace GreenhouseBuff
             {
                 harmony = new Harmony(Mod.Info.ModID);
                 harmony.PatchAll(); // Applies all harmony patches
-                this.Mod.Logger.Notification("patches applied");
+                this.Mod.Logger.Notification("Patches applied");
             }
         }
 

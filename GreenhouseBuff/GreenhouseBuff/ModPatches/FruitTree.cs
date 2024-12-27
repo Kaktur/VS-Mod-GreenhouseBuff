@@ -12,8 +12,6 @@ namespace GreenhouseBuff.ModPatches
     internal class FruitTree : ModSystem
     {
 
-        public static float treeTempBonus = GreenhouseBuffConfig.Loaded.FruitTreeTempMod;
-
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FruitTreeRootBH), "getGreenhouseTempBonus")]
         public static void tree(ref float __result)
@@ -21,7 +19,7 @@ namespace GreenhouseBuff.ModPatches
             // Check if the original return value is 5 and modify it to 10
             if (__result == 5)
             {
-                __result = treeTempBonus;
+                __result = GreenhouseBuffConfig.Loaded.FruitTreeTempMod;
             }
         }
     }

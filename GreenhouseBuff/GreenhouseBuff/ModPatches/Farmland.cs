@@ -15,8 +15,6 @@ namespace GreenhouseBuff.ModPatches
     {
         //20 grows
         //15 dies
-        
-        public static float farmlandTempBonus = GreenhouseBuffConfig.Loaded.FarmlandTempMod;
 
         //WORKS
         //A B TEST with and wiwout mod - works
@@ -34,7 +32,7 @@ namespace GreenhouseBuff.ModPatches
                     (float)codes[i + 1].operand == 5f && codes[i + 2].opcode == OpCodes.Add)
                 {
                     // Replace it with conds.Temperature += farmlandTempBonus
-                    codes[i + 1].operand = farmlandTempBonus;  // Change the operand to the loaded config value
+                    codes[i + 1].operand = GreenhouseBuffConfig.Loaded.FarmlandTempMod;  // Change the operand to the loaded config value
                 }
             }
 
@@ -49,7 +47,7 @@ namespace GreenhouseBuff.ModPatches
 
             // Replace the '5' in the greenhouse temp bonus string
             string originalString = Lang.Get("greenhousetempbonus");
-            string modifiedString = originalString.Replace("5", farmlandTempBonus.ToString());
+            string modifiedString = originalString.Replace("5", GreenhouseBuffConfig.Loaded.FarmlandTempMod.ToString());
 
             // Modify the description
             if (dsc.ToString().Contains(originalString))
