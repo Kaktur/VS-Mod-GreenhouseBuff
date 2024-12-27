@@ -6,14 +6,14 @@ using System.Text;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.GameContent;
+using GreenhouseBuff.ModConfig;
 
-namespace GreenhouseBuff
+
+namespace GreenhouseBuff.ModPatches
 {
     [HarmonyPatch]
     internal class BerryBush : ModSystem
     {
-        public static float bushTempBonus = GreenhouseBuff.Config.BerryBushTempMod;
-
         //WORKS ?
         //A B TEST with and wiwout mod on 80 - works
         [HarmonyTranspiler]
@@ -29,7 +29,7 @@ namespace GreenhouseBuff
                     (float)codes[i + 1].operand == 5f && codes[i + 2].opcode == OpCodes.Add)
                 {
                     // Replace it with temperature += bushTempBonus
-                    codes[i + 1].operand = bushTempBonus;  // Change the operand to the loaded config value
+                    codes[i + 1].operand = (float)GreenhouseBuffConfig.Loaded.BerryBushTempMod;  // Change the operand to the loaded config value
                 }
             }
 
@@ -44,7 +44,7 @@ namespace GreenhouseBuff
 
             // Replace the '5' in the greenhouse temp bonus string
             string originalString = Lang.Get("greenhousetempbonus");
-            string modifiedString = originalString.Replace("5", bushTempBonus.ToString());
+            string modifiedString = originalString.Replace("5", GreenhouseBuffConfig.Loaded.BerryBushTempMod.ToString());
 
             // Modify the description
             if (sb.ToString().Contains(originalString))

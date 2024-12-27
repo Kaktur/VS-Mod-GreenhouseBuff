@@ -1,9 +1,10 @@
 ﻿using HarmonyLib;
 using Vintagestory.API.Common;
 using Vintagestory.GameContent;
+using GreenhouseBuff.ModConfig;
 
 
-namespace GreenhouseBuff
+namespace GreenhouseBuff.ModPatches
 {
     //WORKKS
     //A B TEST with and wiwout mod - works
@@ -12,8 +13,6 @@ namespace GreenhouseBuff
     internal class FruitTree : ModSystem
     {
 
-        public static float treeTempBonus = GreenhouseBuff.Config.FruitTreeTempMod;
-
         [HarmonyPostfix]
         [HarmonyPatch(typeof(FruitTreeRootBH), "getGreenhouseTempBonus")]
         public static void tree(ref float __result)
@@ -21,7 +20,7 @@ namespace GreenhouseBuff
             // Check if the original return value is 5 and modify it to 10
             if (__result == 5)
             {
-                __result = treeTempBonus;
+                __result = (float)GreenhouseBuffConfig.Loaded.FruitTreeTempMod;
             }
         }
     }
